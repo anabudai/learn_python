@@ -1,2 +1,2 @@
 # learn_python
-Learn Python practice
+Learn new things, learn Python
