@@ -1,0 +1,7 @@
+
+Ana likes Python
+but she will also like to learn Go next week
+What do you say?
+
+Text appended
+text text text
