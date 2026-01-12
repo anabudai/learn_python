@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "flask-practice"
+version = "0.1.0"
+description = "A simple Flask practice project"
+authors = [
+    {name = "Anamaria", email = "anamaria@example.com"},
+]
+dependencies = [
+    "Flask>=3.1.0",
+]
+requires-python = ">=3.8"

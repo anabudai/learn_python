@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>Jinja Practice</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <h1>Jinga examples</h1>
+    {# This is a comment #}
+    <div>
+        The students marks are:
+        {% for name in marks.keys() %}
+             <li>Mark for {{name}} is {{marks.get(name)}}</li>
+             {% if marks.get(name) >=8 %}
+                <span>Good</span>
+             {% elif marks.get(name) >= 5 %}
+                <span>Acceptable </span>
+             {% endif %}
+        {% endfor %}
+    </div>
+</body>
+
+</html>
