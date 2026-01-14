@@ -2,10 +2,14 @@ If you do not have the module which helps creating virtual env, run:
 pip install virtualenv
 
 In order to create a new virtual environment, run:
-python -m venv name_for_virtual_env
+python -m venv {name_for_virtual_env}
+Ex:
+python -m venv env8
 
 Next step is to activate the virtual environment. Run script inside:
-.\name_for_virtual_env\Scripts\Activate.ps1
+.\{name_for_virtual_env}\Scripts\Activate.ps1
+Ex:
+.\env8\Scripts\Activate.ps1
 
 If you can't execute the script to activate a virtual env, try to run first:
 Set-ExecutionPolicy Unrestricted -Scope Process
