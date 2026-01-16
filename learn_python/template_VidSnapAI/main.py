@@ -41,6 +41,8 @@ def create():
 
 @app.route("/gallery")
 def gallery():
-    return render_template("gallery.html")
+    reels = os.listdir("static/reels")
+    print(f"============================={reels}")
+    return render_template("gallery.html", reels=reels)
 
 app.run(debug=True)

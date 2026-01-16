@@ -1,0 +1,6 @@
+file first.jpg
+duration 10
+file fourth.jpg
+duration 10
+file second.jpeg
+duration 10

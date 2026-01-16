@@ -7,7 +7,7 @@ def text_to_audio(folder_name):
 
 
 def create_reel(folder_name):
-    command = f'''ffmpeg -f concat -safe 0 -i user_uploads/{folder_name}/input.txt -i user_uploads/{folder_name}/audio.mp3 -vf "scale=1080:1920:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:(oh-ih)/2:black" -c:v libx264 -c:a aac -shortest -r 30 -pix_fmt yuv420p user_uploads/{folder_name}/reel.mp4'''
+    command = f'''ffmpeg -f concat -safe 0 -i user_uploads/{folder_name}/input.txt -i user_uploads/{folder_name}/audio.mp3 -vf "scale=1080:1920:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:(oh-ih)/2:black" -c:v libx264 -c:a aac -shortest -r 30 -pix_fmt yuv420p static/reels/{folder_name}.mp4'''
     subprocess.run(command, shell=True, check=True)
 
 if __name__ == "__main__":
