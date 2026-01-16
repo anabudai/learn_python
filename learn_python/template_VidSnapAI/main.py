@@ -19,6 +19,7 @@ def create():
         print(f"file={request.files.keys()}")
         upload_folder_name = request.form.get("upload_folder_name")
         reel_description = request.form.get("textReel")
+        input_files = []
         for file_name in request.files.keys():
              print(file_name)
              file = request.files[file_name]
@@ -27,9 +28,14 @@ def create():
                 if(not(os.path.exists(os.path.join(app.config["UPLOAD_FOLDER"], upload_folder_name)))):
                     os.mkdir(os.path.join(app.config["UPLOAD_FOLDER"], upload_folder_name))
                 file.save(os.path.join(app.config["UPLOAD_FOLDER"], upload_folder_name, upload_filename))
+                input_files.append(file.filename)
 
              with open(os.path.join(app.config["UPLOAD_FOLDER"], upload_folder_name, "descr.txt"), "w") as desc_file:
                 desc_file.write(reel_description)
+
+        with open(os.path.join(app.config["UPLOAD_FOLDER"], upload_folder_name, "input.txt"), "a") as reel_spec_file:
+            for input_file in input_files:
+                reel_spec_file.write(f"file {input_file}\nduration 10\n")
 
     return render_template("create.html", upload_folder_name=upload_folder_name)
 
